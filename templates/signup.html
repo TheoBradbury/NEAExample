@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}
+    To Do App - Create an account
+{% endblock %}
+
+{% block content %}
+    <div> 
+        <h3>Create an account!</h3>
+        <form action="/auth/createuser" method="post">
+            <div> 
+                <label for="username">Username: </label>
+                <input name ="username" id="username" type="text"/>
+            </div>
+            <div> 
+                <label for="password">Password: </label>
+                <input name ="password" id="password" type="password"/>
+            </div>
+
+            <div> 
+                <label for="repassword">Re Enter Password: </label>
+                <input name ="repassword" id="repassword" type="password"/>
+            </div>
+
+            <div>
+                <input type ="submit" value="Create Account">
+            </div>
+        </form>
+        <p>already have an account? <a href="/login">login in</a></p>
+    </div>
+{% endblock %}

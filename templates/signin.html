@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}
+    To Do App - Sign In
+{% endblock %}
+
+{% block content %}
+    <div> 
+        <form action="/auth/login" method = "post">
+            <div> 
+                <label for="username">Username: </label>
+                <input name ="username" id="username" type="text"/>
+            </div>
+            <div> 
+                <label for="password">Password: </label>
+                <input name ="password id="password" type="password"/>
+            </div>
+            <div>
+                <input type ="submit" value="Login">
+            </div>
+        </form>
+        <p>dont have an account? <a href="/signup">click here</a></p>
+    </div>
+{% endblock %}
