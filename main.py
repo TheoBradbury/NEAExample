@@ -1,7 +1,10 @@
 from flask import Flask, redirect, render_template, request, url_for, session
 from database import DatabaseHandler
 
+SECRET_KEY = "thisisabadsecretkey"
+
 app = Flask(__name__)
+app.secret_key = SECRET_KEY
 
 @app.route("/")
 def home(): 
@@ -9,7 +12,8 @@ def home():
 
 @app.route("/dashboard")
 def dashboard(): 
-    return "dis the dash"
+    currentUser = session["currentUser"]
+    return render_template("dashboard.html", currentUser = currentUser)
 
 @app.route("/login")
 def login(): 
